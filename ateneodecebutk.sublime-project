@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": "../ateneodecebutk",
+            "file_exclude_patterns": ["*.sublime-workspace","*.pyc"]
+		}
+	]
+}
