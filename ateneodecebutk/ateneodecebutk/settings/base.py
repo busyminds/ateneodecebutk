@@ -10,7 +10,16 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-# from django.core.exceptions import ImproperlyConfigured
+from django.core.exceptions import ImproperlyConfigured
+
+msg = "Set the %s environment variable."
+
+def get_env_variable(var_name):
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = msg % var_name
+        raise ImproperlyConfigured(error_msg)
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -20,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=43v#b7jdiam3#j1$02s^#ul$uc$=32g=(+ofl=a&$r_^m8-4z'
+SECRET_KEY = get_env_variable('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
