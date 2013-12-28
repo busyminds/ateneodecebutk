@@ -48,6 +48,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
+    'ateneodecebutk_app',
+    'gradebook',
+    'competencies',
+    'curriculum',
 )
 
 MIDDLEWARE_CLASSES = (
