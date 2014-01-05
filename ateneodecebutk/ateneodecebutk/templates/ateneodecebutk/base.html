@@ -1,0 +1,134 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SHS-AdC ICT Tools for Teachers</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="{% static "ateneodecebutk/lib/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "ateneodecebutk/css/main.css" %}">
+    <script src="{% static "ateneodecebutk/lib/modernizr-2.6.2-respond-1.1.0.min.js" %}"></script>
+    {% block headjs %}
+    {% endblock headjs %}
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar navbar-blue navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-th"></span> SHS-AdC Tools for Teachers</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <!-- <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul> -->
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li><a href="/gradebook"><span class="glyphicon glyphicon-th-list"></span> Gradebook</a></li>
+              <li><a href="/downloads"><span class="glyphicon glyphicon-book"></span> Downloads</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      {% block content %}
+      <div class="jumbotron">
+        <h1>Welcome to <strong class="text-primary">SHS-AdC Tools for Teachers</strong></h1>
+        <p class="lead">
+          This is an ad-hoc website made for the purpose of having a standard go-to website for all things developed by the ICT team for the teachers.
+        </p>
+        <p class="lead">
+          All projects are found below.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Electronic Class Records</h3>
+            </div>
+            <div class="panel-body">
+              <p>View the ECR summaries or download the latest ECR templates by going to the ECR page.</p>
+              <p><a class="btn btn-primary" href="/ecr"><span class="glyphicon glyphicon-th-list"></span> View ECR summaries</a><p>
+              <p><a class="btn btn-default" href="/ecr/templates"><span class="glyphicon glyphicon-th-list"></span> Download ECR templates</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Competency Planner</h3>
+            </div>
+            <div class="panel-body">
+              <p class="text-muted">Submit your list of competencies for the next Quarter.</p>
+              <a class="btn btn-default" href="/competencies" disabled><span class="glyphicon glyphicon-check"></span> Go to Competency Planner</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Curriculum Framework</h3>
+            </div>
+            <div class="panel-body">
+              <p>Get the necessary templates for the planning your Curriculum Framework.</p>
+              <a class="btn btn-default" href="/curriculum"><span class="glyphicon glyphicon-book"></span> Go to Curriculum Framework Templates</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Trends</h3>
+            </div>
+            <div class="panel-body">
+              <p class="text-muted">
+                <strong><em>Coming soon!</em></strong> <br>
+                Investigate different trends and various statistics related to our pupil's grades and exam results.</p>
+              <a class="btn btn-default" href="#" disabled><span class="glyphicon glyphicon-stats"></span> View Trends</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endblock content %}
+
+      {% block footer %}
+      <hr>
+      <div class="footer">
+        <p>&hearts; by Noel Martin Llevares </p>
+        <p class="pull-right">&copy; SHS-AdC ICT Team</p>
+      </div>
+      {% endblock footer %}
+    </div>
+
+    <script src="{% static "ateneodecebutk/lib/jquery-2.0.3.min.js" %}"></script>
+    <script src="{% static "ateneodecebutk/lib/bootstrap.min.js" %}"></script>
+
+  </body>
+</html>
