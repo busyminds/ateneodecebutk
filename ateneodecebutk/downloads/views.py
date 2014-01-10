@@ -1,7 +1,15 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
+import glob
+import os
+from ateneodecebutk.settings.base import MEDIA_ROOT
 
 # Create your views here.
 def index(request):
-    context = {}
+    ecr_files = [os.path.basename(f) for f in
+        glob.glob(MEDIA_ROOT + '/curriculum/*')]
+    context = {
+        'ecr_files': ecr_files,
+        'test': 'Hello'
+    }
     return render(request, 'downloads/index.html', context)

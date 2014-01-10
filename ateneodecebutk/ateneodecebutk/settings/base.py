@@ -23,8 +23,6 @@ def get_env_variable(var_name):
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -48,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ateneodecebutk',
     'gradebook',
     'downloads',
 )
@@ -94,7 +93,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 STATIC_URL = '/static/'
 
