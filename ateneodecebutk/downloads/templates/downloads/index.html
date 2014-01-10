@@ -24,7 +24,7 @@
             <li><em>To download all your templates, click each file that belongs to you.</em></li>
               <ul>
                 {% for file in ecr_files %}
-                  <li>{{ file }}</li>
+                  <li><a href="/files/gradebook/{{ file }}">{{ file }}</a></li>
                 {% endfor %}
               </ul>
             </li>

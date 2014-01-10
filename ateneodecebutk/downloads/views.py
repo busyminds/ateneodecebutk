@@ -7,7 +7,7 @@ from ateneodecebutk.settings.base import MEDIA_ROOT
 # Create your views here.
 def index(request):
     ecr_files = [os.path.basename(f) for f in
-        glob.glob(MEDIA_ROOT + '/curriculum/*')]
+        glob.glob(MEDIA_ROOT + '/gradebook/*')]
     context = {
         'ecr_files': ecr_files,
         'test': 'Hello'
