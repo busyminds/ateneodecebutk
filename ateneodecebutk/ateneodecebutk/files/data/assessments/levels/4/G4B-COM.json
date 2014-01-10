@@ -1,0 +1,530 @@
+{
+  "competency_codes": [
+    {
+      "code": "A",
+      "competency": "Main Topic A"
+    },
+    {
+      "code": "A1",
+      "competency": "Subtopic A1"
+    },
+    {
+      "code": "A2",
+      "competency": "Subtopic A2"
+    },
+    {
+      "code": "B",
+      "competency": "Main Topic B"
+    },
+    {
+      "code": "B1",
+      "competency": "Subtopic B1"
+    },
+    {
+      "code": "B2",
+      "competency": "Subtopic B2"
+    },
+    {
+      "code": "B3",
+      "competency": "Subtopic B3"
+    },
+    {
+      "code": "C",
+      "competency": "Main Topic C"
+    },
+    {
+      "code": "C1",
+      "competency": "Subtopic C1"
+    }
+  ],
+  "components": [
+    {
+      "activities": [
+        {
+          "activity_average": {
+            "average_percent_score": 0.7208,
+            "average_score": 21.63
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.375,
+            "scored_75_to_80": 0.05,
+            "scored_80_to_85": 0.15,
+            "scored_85_to_90": 0.05,
+            "scored_90_and_above": 0.175,
+            "scored_below_60": 0.2
+          },
+          "competencies": [
+            "A1"
+          ],
+          "date": 1383235200,
+          "description": "Test 4.1",
+          "passing_rate": 0.8,
+          "points": 30.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.8171,
+            "average_score": 28.6
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.25,
+            "scored_75_to_80": 0.05,
+            "scored_80_to_85": 0.1,
+            "scored_85_to_90": 0.175,
+            "scored_90_and_above": 0.35,
+            "scored_below_60": 0.075
+          },
+          "competencies": [
+            "A2"
+          ],
+          "date": 1383321600,
+          "description": "Test 4.2",
+          "passing_rate": 0.925,
+          "points": 35.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7517,
+            "average_score": 22.55
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.4,
+            "scored_75_to_80": 0.075,
+            "scored_80_to_85": 0.15,
+            "scored_85_to_90": 0.05,
+            "scored_90_and_above": 0.2,
+            "scored_below_60": 0.125
+          },
+          "competencies": [
+            "B1"
+          ],
+          "date": 1383408000,
+          "description": "Test 4.3",
+          "passing_rate": 0.875,
+          "points": 30.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7293,
+            "average_score": 25.52
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.4,
+            "scored_75_to_80": 0.1,
+            "scored_80_to_85": 0.175,
+            "scored_85_to_90": 0.025,
+            "scored_90_and_above": 0.125,
+            "scored_below_60": 0.175
+          },
+          "competencies": [
+            "B2"
+          ],
+          "date": 1383494400,
+          "description": "Test 4.4",
+          "passing_rate": 0.825,
+          "points": 35.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7758,
+            "average_score": 23.27
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.15,
+            "scored_75_to_80": 0.1,
+            "scored_80_to_85": 0.075,
+            "scored_85_to_90": 0.05,
+            "scored_90_and_above": 0.375,
+            "scored_below_60": 0.25
+          },
+          "competencies": [
+            "B3"
+          ],
+          "date": 1383580800,
+          "description": "Test 4.5",
+          "passing_rate": 0.75,
+          "points": 30.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7657,
+            "average_score": 26.8
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.275,
+            "scored_75_to_80": 0.05,
+            "scored_80_to_85": 0.1,
+            "scored_85_to_90": 0.15,
+            "scored_90_and_above": 0.25,
+            "scored_below_60": 0.175
+          },
+          "competencies": [
+            "C1"
+          ],
+          "date": 1383667200,
+          "description": "Test 4.6",
+          "passing_rate": 0.825,
+          "points": 35.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7567,
+            "average_score": 22.7
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.425,
+            "scored_75_to_80": 0.05,
+            "scored_80_to_85": 0.2,
+            "scored_85_to_90": 0.1,
+            "scored_90_and_above": 0.15,
+            "scored_below_60": 0.075
+          },
+          "competencies": [
+            "C1"
+          ],
+          "date": 1383753600,
+          "description": "Test 4.7",
+          "passing_rate": 0.925,
+          "points": 30.0
+        }
+      ],
+      "component_average_grade": 85.13,
+      "component_average_score": 171.07,
+      "component_name": "Tests, Performance Tasks",
+      "component_perfect_score": 225.0,
+      "component_weight": 0.6
+    },
+    {
+      "activities": [
+        {
+          "activity_average": {
+            "average_percent_score": 0.7325,
+            "average_score": 7.33
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.25,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.225,
+            "scored_85_to_90": 0.0,
+            "scored_90_and_above": 0.275,
+            "scored_below_60": 0.25
+          },
+          "competencies": [
+            "A1"
+          ],
+          "date": 1383840000,
+          "description": "Activity 4.1",
+          "passing_rate": 0.75,
+          "points": 10.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7967,
+            "average_score": 11.95
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.4,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.075,
+            "scored_85_to_90": 0.075,
+            "scored_90_and_above": 0.375,
+            "scored_below_60": 0.075
+          },
+          "competencies": [
+            "A1"
+          ],
+          "date": 1383926400,
+          "description": "Activity 4.2",
+          "passing_rate": 0.925,
+          "points": 15.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7575,
+            "average_score": 15.15
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.15,
+            "scored_75_to_80": 0.1,
+            "scored_80_to_85": 0.175,
+            "scored_85_to_90": 0.125,
+            "scored_90_and_above": 0.25,
+            "scored_below_60": 0.2
+          },
+          "competencies": [
+            "A2"
+          ],
+          "date": 1384012800,
+          "description": "Activity 4.3",
+          "passing_rate": 0.8,
+          "points": 20.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.724,
+            "average_score": 18.1
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.35,
+            "scored_75_to_80": 0.05,
+            "scored_80_to_85": 0.15,
+            "scored_85_to_90": 0.05,
+            "scored_90_and_above": 0.175,
+            "scored_below_60": 0.225
+          },
+          "competencies": [
+            "A1",
+            "A2"
+          ],
+          "date": 1384099200,
+          "description": "Activity 4.4",
+          "passing_rate": 0.775,
+          "points": 25.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7767,
+            "average_score": 23.3
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.325,
+            "scored_75_to_80": 0.125,
+            "scored_80_to_85": 0.125,
+            "scored_85_to_90": 0.125,
+            "scored_90_and_above": 0.2,
+            "scored_below_60": 0.1
+          },
+          "competencies": [
+            "B1"
+          ],
+          "date": 1384185600,
+          "description": "Activity 4.5",
+          "passing_rate": 0.9,
+          "points": 30.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.76,
+            "average_score": 7.6
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.35,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.025,
+            "scored_85_to_90": 0.0,
+            "scored_90_and_above": 0.45,
+            "scored_below_60": 0.175
+          },
+          "competencies": [
+            "B2"
+          ],
+          "date": 1384272000,
+          "description": "Activity 4.6",
+          "passing_rate": 0.825,
+          "points": 10.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.705,
+            "average_score": 10.57
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.525,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.05,
+            "scored_85_to_90": 0.075,
+            "scored_90_and_above": 0.15,
+            "scored_below_60": 0.2
+          },
+          "competencies": [
+            "B3"
+          ],
+          "date": 1384358400,
+          "description": "Activity 4.7",
+          "passing_rate": 0.8,
+          "points": 15.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7888,
+            "average_score": 15.78
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.25,
+            "scored_75_to_80": 0.1,
+            "scored_80_to_85": 0.175,
+            "scored_85_to_90": 0.225,
+            "scored_90_and_above": 0.225,
+            "scored_below_60": 0.025
+          },
+          "competencies": [
+            "B2",
+            "B3"
+          ],
+          "date": 1384444800,
+          "description": "Activity 4.8",
+          "passing_rate": 0.975,
+          "points": 20.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.768,
+            "average_score": 19.2
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.25,
+            "scored_75_to_80": 0.075,
+            "scored_80_to_85": 0.15,
+            "scored_85_to_90": 0.05,
+            "scored_90_and_above": 0.3,
+            "scored_below_60": 0.175
+          },
+          "competencies": [
+            "C1"
+          ],
+          "date": 1384531200,
+          "description": "Activity 4.9",
+          "passing_rate": 0.825,
+          "points": 25.0
+        }
+      ],
+      "component_average_grade": 85.05,
+      "component_average_score": 128.97,
+      "component_name": "Hands-On Activities",
+      "component_perfect_score": 170.0,
+      "component_weight": 0.3
+    },
+    {
+      "activities": [
+        {
+          "activity_average": {
+            "average_percent_score": 0.775,
+            "average_score": 7.75
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.275,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.125,
+            "scored_85_to_90": 0.0,
+            "scored_90_and_above": 0.45,
+            "scored_below_60": 0.15
+          },
+          "competencies": [
+            "A2"
+          ],
+          "date": 1384617600,
+          "description": "Oral 4.1",
+          "passing_rate": 0.85,
+          "points": 10.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.775,
+            "average_score": 7.75
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.3,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.25,
+            "scored_85_to_90": 0.0,
+            "scored_90_and_above": 0.35,
+            "scored_below_60": 0.1
+          },
+          "competencies": [
+            "B1"
+          ],
+          "date": 1384704000,
+          "description": "Oral 4.2",
+          "passing_rate": 0.9,
+          "points": 10.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.8025,
+            "average_score": 8.03
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.175,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.225,
+            "scored_85_to_90": 0.0,
+            "scored_90_and_above": 0.45,
+            "scored_below_60": 0.15
+          },
+          "competencies": [
+            "B1"
+          ],
+          "date": 1384790400,
+          "description": "Oral 4.3",
+          "passing_rate": 0.85,
+          "points": 10.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.765,
+            "average_score": 7.65
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.4,
+            "scored_75_to_80": 0.0,
+            "scored_80_to_85": 0.15,
+            "scored_85_to_90": 0.0,
+            "scored_90_and_above": 0.325,
+            "scored_below_60": 0.125
+          },
+          "competencies": [
+            "C1"
+          ],
+          "date": 1384876800,
+          "description": "Oral 4.4",
+          "passing_rate": 0.875,
+          "points": 10.0
+        }
+      ],
+      "component_average_grade": 86.35,
+      "component_average_score": 31.18,
+      "component_name": "Oral Participation",
+      "component_perfect_score": 40.0,
+      "component_weight": 0.1
+    },
+    null
+  ],
+  "date_created": "12/17/13",
+  "level": 4,
+  "periodical_test": {
+    "periodical_test_average_grade": 78.79,
+    "periodical_test_average_score": 50.2,
+    "periodical_test_data": {
+      "passing_rate": 0.875,
+      "points": 65.0,
+      "pt_average": {
+        "average_percent_score": 0.7723,
+        "average_score": 50.2
+      },
+      "pt_histogram": {
+        "scored_60_to_75": 0.325,
+        "scored_75_to_80": 0.1,
+        "scored_80_to_85": 0.15,
+        "scored_85_to_90": 0.05,
+        "scored_90_and_above": 0.25,
+        "scored_below_60": 0.125
+      }
+    },
+    "periodical_test_name": "Periodical Test",
+    "periodical_test_perfect_score": 65.0,
+    "periodical_test_weight": 0.25
+  },
+  "section": "Jogues",
+  "section_average_grade": 85.4,
+  "section_histogram": {
+    "range_75_to_80": 0,
+    "range_80_to_85": 18,
+    "range_85_to_90": 21,
+    "range_90_to_95": 1,
+    "range_95_and_above": 0,
+    "range_below_75": 0
+  },
+  "subject": "Computer",
+  "teacher": "Mr. Noel Martin B. Llevares",
+  "timestamp": 1387270700
+}

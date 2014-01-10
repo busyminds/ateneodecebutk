@@ -1,0 +1,259 @@
+{
+  "competency_codes": [],
+  "components": [
+    {
+      "activities": [
+        {
+          "activity_average": {
+            "average_percent_score": 0.8186,
+            "average_score": 32.74
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.1143,
+            "scored_75_to_80": 0.2857,
+            "scored_80_to_85": 0.2,
+            "scored_85_to_90": 0.1429,
+            "scored_90_and_above": 0.2571,
+            "scored_below_60": 0.0
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "Quiz 2.1",
+          "passing_rate": 1.0,
+          "points": 40.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.8376,
+            "average_score": 29.31
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.1714,
+            "scored_75_to_80": 0.0857,
+            "scored_80_to_85": 0.2,
+            "scored_85_to_90": 0.2857,
+            "scored_90_and_above": 0.2571,
+            "scored_below_60": 0.0
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "Quiz 2.2",
+          "passing_rate": 1.0,
+          "points": 35.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.9279,
+            "average_score": 37.11
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.0286,
+            "scored_75_to_80": 0.0286,
+            "scored_80_to_85": 0.0857,
+            "scored_85_to_90": 0.0286,
+            "scored_90_and_above": 0.8286,
+            "scored_below_60": 0.0
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "Letter",
+          "passing_rate": 1.0,
+          "points": 40.0
+        }
+      ],
+      "component_average_grade": 91.4,
+      "component_average_score": 99.17,
+      "component_name": "Tests, Performance Tasks",
+      "component_perfect_score": 115.0,
+      "component_weight": 0.5
+    },
+    {
+      "activities": [
+        {
+          "activity_average": {
+            "average_percent_score": 0.8354,
+            "average_score": 20.89
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.1143,
+            "scored_75_to_80": 0.1143,
+            "scored_80_to_85": 0.3714,
+            "scored_85_to_90": 0.0857,
+            "scored_90_and_above": 0.3143,
+            "scored_below_60": 0.0
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "SW 2.1",
+          "passing_rate": 1.0,
+          "points": 25.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.8526,
+            "average_score": 21.31
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.0857,
+            "scored_75_to_80": 0.1429,
+            "scored_80_to_85": 0.1714,
+            "scored_85_to_90": 0.2,
+            "scored_90_and_above": 0.3714,
+            "scored_below_60": 0.0286
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "SW 2.2",
+          "passing_rate": 0.9714,
+          "points": 25.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.8545,
+            "average_score": 21.36
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.1212,
+            "scored_75_to_80": 0.0303,
+            "scored_80_to_85": 0.1818,
+            "scored_85_to_90": 0.1818,
+            "scored_90_and_above": 0.4545,
+            "scored_below_60": 0.0303
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "SW 2.3",
+          "passing_rate": 0.9697,
+          "points": 25.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.8011,
+            "average_score": 20.03
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.0571,
+            "scored_75_to_80": 0.0857,
+            "scored_80_to_85": 0.6571,
+            "scored_85_to_90": 0.0857,
+            "scored_90_and_above": 0.0857,
+            "scored_below_60": 0.0286
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "Reflection",
+          "passing_rate": 0.9714,
+          "points": 25.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.7857,
+            "average_score": 22.0
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.2857,
+            "scored_75_to_80": 0.2571,
+            "scored_80_to_85": 0.1143,
+            "scored_85_to_90": 0.1714,
+            "scored_90_and_above": 0.1143,
+            "scored_below_60": 0.0571
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "Pairwork",
+          "passing_rate": 0.9429,
+          "points": 28.0
+        },
+        {
+          "activity_average": {
+            "average_percent_score": 0.8756,
+            "average_score": 21.89
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.0556,
+            "scored_75_to_80": 0.0278,
+            "scored_80_to_85": 0.3889,
+            "scored_85_to_90": 0.1111,
+            "scored_90_and_above": 0.4167,
+            "scored_below_60": 0.0
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "Pairwork 3.2",
+          "passing_rate": 1.0,
+          "points": 25.0
+        }
+      ],
+      "component_average_grade": 89.6,
+      "component_average_score": 127.4,
+      "component_name": "Seatwork / Kathang Di-Pormal",
+      "component_perfect_score": 153.0,
+      "component_weight": 0.4
+    },
+    {
+      "activities": [
+        {
+          "activity_average": {
+            "average_percent_score": 0.7355,
+            "average_score": 25.74
+          },
+          "activity_histogram": {
+            "scored_60_to_75": 0.4857,
+            "scored_75_to_80": 0.0857,
+            "scored_80_to_85": 0.1429,
+            "scored_85_to_90": 0.1143,
+            "scored_90_and_above": 0.0857,
+            "scored_below_60": 0.0857
+          },
+          "competencies": [
+            ""
+          ],
+          "date": null,
+          "description": "PledgeMy",
+          "passing_rate": 0.9143,
+          "points": 35.0
+        }
+      ],
+      "component_average_grade": 83.74,
+      "component_average_score": 25.74,
+      "component_name": "Oral Recitation",
+      "component_perfect_score": 35.0,
+      "component_weight": 0.1
+    },
+    null
+  ],
+  "date_created": "01/06/14",
+  "level": 6,
+  "periodical_test": null,
+  "section": "Gonzaga",
+  "section_average_grade": 89.91,
+  "section_histogram": {
+    "range_75_to_80": 0,
+    "range_80_to_85": 2,
+    "range_85_to_90": 16,
+    "range_90_to_95": 17,
+    "range_95_and_above": 0,
+    "range_below_75": 0
+  },
+  "subject": "Social Studies",
+  "teacher": "Mr. Alven Rey C. Labadan",
+  "timestamp": 1388964632
+}
