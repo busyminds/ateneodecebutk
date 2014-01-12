@@ -1,1 +1,55 @@
 {% extends "ateneodecebutk/base.html" %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1><strong class="text-primary">Electronic Class Record</strong></h1>
+    <p class="lead">
+      This page is for listing the available ECR summaries.
+    </p>
+    <p class="lead">
+      <a href="/ecr/templates">
+        Click here if you're looking for the ECR templates for download.
+      </a>
+    </p>
+
+    </p>
+  </div>
+
+  {% for grade_level in grade_levels %}
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Grade {{ grade_level }}</h3>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                {% for year_level in sections %}
+                  {% if forloop.counter == grade_level %}
+                    {% for section in year_level %}
+                      <th>{{ section.1 }}</th>
+                    {% endfor %}
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in subjects %}
+                <tr>
+                  <th>{{ subject.1 }}</th>
+                  {% for year_level in sections %}
+                    {% if forloop.counter == grade_level %}
+                      {% for section in year_level %}
+                        <td>&nbsp;</td>
+                      {% endfor %}
+                    {% endif %}
+                  {% endfor %}
+                </th>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
