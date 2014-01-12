@@ -62,3 +62,12 @@ SECTIONS = (
         ('G6F', '6-Gonzaga')
     ]
 )
+
+def get_subjects(grade_level):
+    subjects = SUBJECTS
+    if grade_level < 4:
+        subjects.remove(('HE', 'HE'))
+        if grade_level < 3:
+            subjects.remove(('SCI', 'Science'))
+
+    return subjects
