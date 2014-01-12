@@ -24,9 +24,9 @@
             <thead>
               <tr>
                 <th>&nbsp;</th>
-                {% for year_level in sections %}
+                {% for sections_by_level in sections %}
                   {% if forloop.counter == grade_level %}
-                    {% for section in year_level %}
+                    {% for section in sections_by_level %}
                       <th>{{ section.1 }}</th>
                     {% endfor %}
                   {% endif %}
@@ -34,18 +34,20 @@
               </tr>
             </thead>
             <tbody>
-              {% for year_level in subject_array %}
+              {% for subjects_by_level in subject_array %}
                 {% if forloop.counter == grade_level %}
-                  <tr>
-                    <th>{{ subject.1 }}</th>
-                    {% for year_level in sections %}
-                      {% if forloop.counter == grade_level %}
-                        {% for section in year_level %}
-                          <td>&nbsp;</td>
-                        {% endfor %}
-                      {% endif %}
-                    {% endfor %}
-                  </th>
+                  {% for subject in subjects_by_level %}
+                    <tr>
+                      <th>{{ subject.1 }}</th>
+                      {% for sections_by_level in sections %}
+                        {% if forloop.counter == grade_level %}
+                          {% for section in sections_by_level %}
+                            <td>{{ section.1 }}</td>
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
                 {% endif %}
               {% endfor %}
             </tbody>

@@ -64,7 +64,7 @@ SECTIONS = (
 )
 
 def get_subjects(grade_level):
-    subjects = SUBJECTS
+    subjects = list(SUBJECTS)
     if grade_level < 4:
         subjects.remove(('HE', 'HE'))
         if grade_level < 3:
