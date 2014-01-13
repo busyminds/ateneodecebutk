@@ -15,40 +15,27 @@
     </p>
   </div>
 
-  {% for grade_level in grade_levels %}
+  {% for level in class_table %}
     <div class="row">
       <div class="col-md-12">
-        <h3>Grade {{ grade_level}}</h3>
+        <h3>Grade {{ level.grade_level }}</h3>
         <div class="table-responsive">
           <table class="table">
             <thead>
-              <tr>
-                <th>&nbsp;</th>
-                {% for sections_by_level in sections %}
-                  {% if forloop.counter == grade_level %}
-                    {% for section in sections_by_level %}
-                      <th>{{ section.1 }}</th>
-                    {% endfor %}
-                  {% endif %}
-                {% endfor %}
-              </tr>
+              <th>&nbsp;</th>
+              {% for code, section in level.sections %}
+                <th>{{ section }}</th>
+              {% endfor %}
             </thead>
             <tbody>
-              {% for subjects_by_level in subject_array %}
-                {% if forloop.counter == grade_level %}
-                  {% for subject in subjects_by_level %}
-                    <tr>
-                      <th>{{ subject.1 }}</th>
-                      {% for sections_by_level in sections %}
-                        {% if forloop.counter == grade_level %}
-                          {% for section in sections_by_level %}
-                            <td>{{ section.1 }}</td>
-                          {% endfor %}
-                        {% endif %}
-                      {% endfor %}
-                    </tr>
+              {% for subject_code, subject in level.subjects %}
+                <tr>
+                  <th>{{ subject }}</th>
+                  {% for section_code, section in level.sections %}
+                    {# <td>{{ gradebook_data.section_code.subject_code }}</td> #}
+                    <td>{{ section_code }}-{{subject_code}}</td>
                   {% endfor %}
-                {% endif %}
+                </tr>
               {% endfor %}
             </tbody>
           </table>
@@ -57,5 +44,6 @@
     </div>
   {% endfor %}
 
-  {{ gradebook_data }}
+  <pre>{{ gradebook_data|pprint }}</pre>
+
 {% endblock %}
