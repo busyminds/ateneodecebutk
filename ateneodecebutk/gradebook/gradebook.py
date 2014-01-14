@@ -1,3 +1,8 @@
+import os
+import json
+
+from ateneodecebutk.settings.base import BASE_DIR
+
 SUBJECT_CODES = [
     ('CHI', 'Chinese'),
     ('CLF', 'CLF'),
@@ -63,10 +68,29 @@ SECTION_CODES = [
     ]
 ]
 
-def get_subjects(grade_level):
+def get_subject_status(grade_level):
+    subject_data = []
     subjects = list(SUBJECT_CODES)
     if grade_level < 4:
         subjects.remove(('HE', 'HE'))
         if grade_level < 3:
             subjects.remove(('SCI', 'Science'))
-    return subjects
+
+    data_dir = os.path.join(BASE_DIR, 'data/assessments/levels/'
+        + str(grade_level) + '/')
+
+    for subject in subjects:
+        section_data = []
+        for section in SECTION_CODES[grade_level - 1]:
+            filename = "%s-%s.json" % (section[0], subject[0])
+            try:
+                json_file = open(os.path.join(data_dir, filename))
+            except IOError:
+                subject_section_status = 0
+            else:
+                json_data = json.load(json_file)
+                subject_section_status = json_data['timestamp']
+            section_data.append(subject_section_status)
+        subject_data.append((subject[1], section_data))
+
+    return subject_data

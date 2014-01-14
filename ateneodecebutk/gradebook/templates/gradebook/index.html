@@ -28,12 +28,11 @@
               {% endfor %}
             </thead>
             <tbody>
-              {% for subject_code, subject in level.subjects %}
+              {% for subject, section_data in level.subjects %}
                 <tr>
                   <th>{{ subject }}</th>
-                  {% for section_code, section in level.sections %}
-                    {# <td>{{ gradebook_data.section_code.subject_code }}</td> #}
-                    <td>{{ section_code }}-{{subject_code}}</td>
+                  {% for status in section_data %}
+                    <td>{{ status }}</td>
                   {% endfor %}
                 </tr>
               {% endfor %}
@@ -44,6 +43,6 @@
     </div>
   {% endfor %}
 
-  <pre>{{ gradebook_data|pprint }}</pre>
+  <pre>{{ class_table|pprint }}</pre>
 
 {% endblock %}
