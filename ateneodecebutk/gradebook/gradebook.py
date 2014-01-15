@@ -114,7 +114,11 @@ def get_subject_status(grade_level):
                 subject_section_status = None
             else:
                 json_data = json.load(json_file)
-                subject_section_status = time_difference(json_data['timestamp'])
+                subject_section_status = {
+                    'class_code': "%s-%s" % (section[0], subject[0]),
+                    'teacher': json_data['teacher'],
+                    'age': time_difference(json_data['timestamp'])
+                }
             section_data.append(subject_section_status)
         subject_data.append((subject[1], section_data))
 

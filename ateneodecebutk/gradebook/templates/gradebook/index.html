@@ -34,8 +34,8 @@
                   {% for status in section_data %}
                     {% if status %}
                       <td class="success text-success">
-                        <a href="/gradebook/" class="text-success">
-                          {{ status }}
+                        <a href="/gradebook/{{ status.class_code }}" class="text-success" data-toggle="tooltip" title="{{ status.teacher }}">
+                          {{ status.age }}
                         </a>
                       </td>
                     {% else %}
