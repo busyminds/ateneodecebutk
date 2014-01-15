@@ -32,7 +32,19 @@
                 <tr>
                   <th>{{ subject }}</th>
                   {% for status in section_data %}
-                    <td>{{ status }}</td>
+                    {% if status %}
+                      <td class="success text-success">
+                        <a href="/gradebook/" class="text-success">
+                          {{ status }}
+                        </a>
+                      </td>
+                    {% else %}
+                      <td class="danger text-danger">
+                        <span class="text-danger">
+                        No data
+                       </span>
+                      </td>
+                    {% endif %}
                   {% endfor %}
                 </tr>
               {% endfor %}

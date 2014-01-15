@@ -1,5 +1,6 @@
 import os
 import json
+import time
 
 from ateneodecebutk.settings.base import BASE_DIR
 
@@ -68,6 +69,30 @@ SECTION_CODES = [
     ]
 ]
 
+def time_difference(timestamp):
+    difference = time.time() - timestamp
+
+    if difference < 1:
+        return '0 seconds'
+
+    time_factors = [(365 * 24 * 60 * 60, 'year'),
+                    (30 * 24 * 60 * 60, 'month'),
+                    (24 * 60 * 60, 'day'),
+                    (60 * 60, 'hour'),
+                    (60, 'minute'),
+                    (1, 'second'),
+    ]
+
+    for seconds, time_string in time_factors:
+        d = difference/seconds
+        if d >= 1:
+            r = round(d)
+            if r > 1:
+                plural = 's ago'
+            else:
+                plural = ' ago'
+            return '%d %s%s' % (r, time_string, plural)
+
 def get_subject_status(grade_level):
     subject_data = []
     subjects = list(SUBJECT_CODES)
@@ -86,10 +111,10 @@ def get_subject_status(grade_level):
             try:
                 json_file = open(os.path.join(data_dir, filename))
             except IOError:
-                subject_section_status = 0
+                subject_section_status = None
             else:
                 json_data = json.load(json_file)
-                subject_section_status = json_data['timestamp']
+                subject_section_status = time_difference(json_data['timestamp'])
             section_data.append(subject_section_status)
         subject_data.append((subject[1], section_data))
 
