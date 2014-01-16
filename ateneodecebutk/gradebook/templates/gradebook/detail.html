@@ -1,0 +1,296 @@
+{% extends "ateneodecebutk/base.html" %}
+
+{% load static %}
+{% block content %}
+  {% verbatim %}
+  <div ng-app="EcrApp" ng-controller="EcrDataController">
+    <h1 class="text-muted">
+      <span class="text-info">
+        {{jsonData.level}}-{{jsonData.section}}
+      </span> |
+      <span class="text-success">
+        {{jsonData.subject}}
+      </span> |
+      <span class="text-warning">
+        {{jsonData.teacher}}
+      </span>
+    </h1>
+    <h3 class="text-muted">
+      <em>Last updated: {{jsonData.timestamp * 1000 | date:shortDate}}</em>
+    </h3>
+    <hr>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Class Statistics</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            <p class="lead">
+              Average Grade:
+              <span class="text-info">
+                {{jsonData.section_average_grade | number:1}}
+              </span>
+            </p>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-4">
+                <p class="text-right text-info">95 and above</p>
+              </div>
+              <div class="col-md-4">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{jsonData.section_histogram.range_95_and_above}}" aria-valuemin="0" aria-valuemax="{{noOfStudents()}}" style="width: {{jsonData.section_histogram.range_95_and_above / noOfStudents() * 100 | number:0}}%">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="text-info" ng-show="(jsonData.section_histogram.range_95_and_above > 0)">{{jsonData.section_histogram.range_95_and_above}} {{(jsonData.section_histogram.range_95_and_above > 1) ? 'students':'student'}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="text-right text-info">90 to 95</p>
+              </div>
+              <div class="col-md-4">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{jsonData.section_histogram.range_90_to_95}}" aria-valuemin="0" aria-valuemax="{{noOfStudents()}}" style="width: {{jsonData.section_histogram.range_90_to_95 / noOfStudents() * 100 | number:0}}%">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="text-info" ng-show="(jsonData.section_histogram.range_90_to_95 > 0)">{{jsonData.section_histogram.range_90_to_95}} {{(jsonData.section_histogram.range_90_to_95 > 1) ? 'students':'student'}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="text-right text-info">85 to 90</p>
+              </div>
+              <div class="col-md-4">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{jsonData.section_histogram.range_85_to_90}}" aria-valuemin="0" aria-valuemax="{{noOfStudents()}}" style="width: {{jsonData.section_histogram.range_85_to_90 / noOfStudents() * 100 | number:0}}%">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="text-info" ng-show="(jsonData.section_histogram.range_85_to_90 > 0)">{{jsonData.section_histogram.range_85_to_90}} {{(jsonData.section_histogram.range_85_to_90 > 1) ? 'students':'student'}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="text-right text-info">80 to 85</p>
+              </div>
+              <div class="col-md-4">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{jsonData.section_histogram.range_80_to_85}}" aria-valuemin="0" aria-valuemax="{{noOfStudents()}}" style="width: {{jsonData.section_histogram.range_80_to_85 / noOfStudents() * 100 | number:0}}%">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="text-info" ng-show="(jsonData.section_histogram.range_80_to_85 > 0)">{{jsonData.section_histogram.range_80_to_85}} {{(jsonData.section_histogram.range_80_to_85 > 1) ? 'students':'student'}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="text-right text-warning">75 to 80</p>
+              </div>
+              <div class="col-md-4">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{jsonData.section_histogram.range_75_to_80}}" aria-valuemin="0" aria-valuemax="{{noOfStudents()}}" style="width: {{jsonData.section_histogram.range_75_to_80 / noOfStudents() * 100 | number:0}}%">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="text-warning" ng-show="(jsonData.section_histogram.range_75_to_80 > 0)">{{jsonData.section_histogram.range_75_to_80}} {{(jsonData.section_histogram.range_75_to_80 > 1) ? 'students':'student'}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="text-right text-danger">below 75</p>
+              </div>
+              <div class="col-md-4">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{jsonData.section_histogram.range_below_75}}" aria-valuemin="0" aria-valuemax="{{noOfStudents()}}" style="width: {{jsonData.section_histogram.range_below_75 / noOfStudents() * 100 | number:0}}%">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="text-danger" ng-show="(jsonData.section_histogram.range_below_75 > 0)">{{jsonData.section_histogram.range_below_75}} {{(jsonData.section_histogram.range_below_75 > 1) ? 'students':'student'}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-repeat="component in jsonData.components track by $index">
+      <div class="panel panel-default" ng-show="(component)">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse-{{$index}}">
+              <span class="text-primary">
+                {{component.component_name}} - {{component.component_weight * 100}}%
+              </span>
+            </a>
+            <span class="text-muted pull-right">
+              <small>
+                Class Average for this component:
+                <span class="text-primary">
+                  {{component.component_average_grade | number:1}}
+                </span>
+              </small>
+            </span>
+          </h4>
+        </div>
+        <div id="collapse-{{$index}}" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Points</th>
+                <th>Passing Rate</th>
+                <th>Average Score</th>
+                <!-- <th>Competencies</th> -->
+              </thead>
+              <tbody>
+                <tr ng-repeat-start="activity in component.activities" ng-class="(activity.passing_rate < 0.8) ? 'danger':''">
+                  <td>
+                    <a href="" ng-click="toggleVisibility(activity);" ng-class="(activity.passing_rate < 0.8) ? 'text-danger':''">
+                      {{activity.description}}
+                    </a>
+                  </td>
+                  <td>
+                    <span ng-show="(activity.date)">
+                      {{activity.date * 1000 | date:shortDate}}
+                    </span>
+                  </td>
+                  <td>{{activity.points}}</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="{{activity.passing_rate * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.passing_rate * 100 | number:0}}%;"ng-class="{true: 'progress-bar-danger', false: ''}[activity.passing_rate < 0.8]">
+                        <span>
+                          {{activity.passing_rate * 100 | number:0}}%
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="{{activity.activity_average.average_percent_score * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.activity_average.average_percent_score * 100 | number:0}}%;">
+                        <span>
+                          {{activity.activity_average.average_percent_score * 100 | number:0}}%
+                          ({{activity.activity_average.average_score | number:1}})
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr ng-repeat-end ng-show="(activity.isVisible)">
+                  <td colspan="3">
+                    <p><em>Score Distribution</em></p>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <span class="pull-right">Advanced</span>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-info" role="progressbar"
+                          aria-valuenow="{{activity.activity_histogram.scored_90_and_above * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.activity_histogram.scored_90_and_above * 100 | number:0}}%;">
+                            <span>{{activity.activity_histogram.scored_90_and_above * 100 | number:0}}%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <span class="pull-right">Proficient</span>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-info" role="progressbar"
+                          aria-valuenow="{{activity.activity_histogram.scored_85_to_90 * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.activity_histogram.scored_85_to_90 * 100 | number:0}}%;">
+                            <span>{{activity.activity_histogram.scored_85_to_90 * 100 | number:0}}%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <span class="pull-right">Approaching Proficiency</span>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-info" role="progressbar"
+                          aria-valuenow="{{activity.activity_histogram.scored_80_to_85 * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.activity_histogram.scored_80_to_85 * 100 | number:0}}%;">
+                            <span>{{activity.activity_histogram.scored_80_to_85 * 100 | number:0}}%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <span class="pull-right">Developing</span>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-info" role="progressbar"
+                          aria-valuenow="{{activity.activity_histogram.scored_75_to_80 * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.activity_histogram.scored_75_to_80 * 100 | number:0}}%;">
+                            <span>{{activity.activity_histogram.scored_75_to_80 * 100 | number:0}}%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <span class="pull-right">Beginning</span>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning" role="progressbar"
+                          aria-valuenow="{{activity.activity_histogram.scored_60_to_75 * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.activity_histogram.scored_60_to_75 * 100 | number:0}}%;">
+                            <span>{{activity.activity_histogram.scored_60_to_75 * 100 | number:0}}%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <span class="pull-right">Needs Improvement</span>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-danger" role="progressbar"
+                          aria-valuenow="{{activity.activity_histogram.scored_below_60 * 100 | number:0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity.activity_histogram.scored_below_60 * 100 | number:0}}%;">
+                            <span>{{activity.activity_histogram.scored_below_60 * 100 | number:0}}%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <p><em>Targeted Competencies</em></p>
+                    <ul class="list-group">
+                      <li class="list-group-item" ng-repeat="competency in showCompetencies(activity.competencies)">{{competency}}</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endverbatim %}
+  <pre>{{ jsonData|pprint }}</pre>
+{% endblock %}
+
+{% block js_body %}
+  {{ block.super }}
+  <script src="{% static "ateneodecebutk/lib/angular.min.js" %}"></script>
+  <script>
+    var ecrData;
+    ecrData = {{ json_data|safe }};
+  </script>
+  <script src="{% static "ateneodecebutk/js/ecr.js" %}"></script>
+{% endblock %}
