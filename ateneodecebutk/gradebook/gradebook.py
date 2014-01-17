@@ -93,15 +93,13 @@ def time_difference(timestamp):
                 plural = ' ago'
             return '%d %s%s' % (r, time_string, plural)
 
-def get_subject_status(grade_level):
+def get_subject_status(grading_period, grade_level):
     subject_data = []
     subjects = list(SUBJECT_CODES)
     if grade_level < 4:
         subjects.remove(('HE', 'HE'))
         if grade_level < 3:
             subjects.remove(('SCI', 'Science'))
-
-    grading_period = 4
 
     data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/'
         + str(grading_period) + '/levels/' + str(grade_level) + '/')

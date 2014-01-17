@@ -5,30 +5,31 @@ from ateneodecebutk.settings.base import BASE_DIR
 
 import gradebook
 
-def index(request):
+def index(request, grading_period):
     class_table = []
 
     for i in range(6):
         class_table.append({
             'grade_level': i + 1,
             'sections': gradebook.SECTION_CODES[i],
-            'subjects': gradebook.get_subject_status(i + 1)
+            'subjects': gradebook.get_subject_status(grading_period, i + 1)
         })
     context = {
+        'grading_period': grading_period,
         'class_table': class_table
     }
     return render(request, 'gradebook/index.html', context)
 
-def detail(request):
+def detail(request, grading_period, class_code):
 
-    grade_level = 4
-    grading_period = 4
+    grade_level = class_code[1]
+    # grading_period = 4
 
-    data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/' + str(grading_period)
-        + '/levels/' + str(grade_level) + '/')
+    data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/'
+        + str(grading_period) + '/levels/' + str(grade_level) + '/')
 
     try:
-        json_file = open(os.path.join(data_dir, 'G4A-COM.json')).read()
+        json_file = open(os.path.join(data_dir, class_code + '.json')).read()
     except:
         pass
 
