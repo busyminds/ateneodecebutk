@@ -1,6 +1,11 @@
 {% extends "ateneodecebutk/base.html" %}
 
 {% load static %}
+
+{% block js_head %}
+  <script src="{% static "ateneodecebutk/lib/angular.min.js" %}"></script>
+{% endblock %}
+
 {% block content %}
   {% verbatim %}
   <div ng-app="EcrApp" ng-controller="EcrDataController">
@@ -287,7 +292,6 @@
 
 {% block js_body %}
   {{ block.super }}
-  <script src="{% static "ateneodecebutk/lib/angular.min.js" %}"></script>
   <script>
     var ecrData;
     ecrData = {{ json_data|safe }};

@@ -22,9 +22,10 @@ def index(request):
 def detail(request):
 
     grade_level = 4
+    grading_period = 4
 
-    data_dir = os.path.join(BASE_DIR, 'data/assessments/levels/'
-        + str(grade_level) + '/')
+    data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/' + str(grading_period)
+        + '/levels/' + str(grade_level) + '/')
 
     try:
         json_file = open(os.path.join(data_dir, 'G4A-COM.json')).read()

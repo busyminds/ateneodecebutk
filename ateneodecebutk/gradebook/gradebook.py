@@ -101,8 +101,10 @@ def get_subject_status(grade_level):
         if grade_level < 3:
             subjects.remove(('SCI', 'Science'))
 
-    data_dir = os.path.join(BASE_DIR, 'data/assessments/levels/'
-        + str(grade_level) + '/')
+    grading_period = 4
+
+    data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/'
+        + str(grading_period) + '/levels/' + str(grade_level) + '/')
 
     for subject in subjects:
         section_data = []
