@@ -1,8 +1,5 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-import os
-
-from ateneodecebutk.settings.base import BASE_DIR
 
 import gradebook
 
@@ -27,15 +24,8 @@ def detail(request, grading_period, class_code):
 
     grade_level = class_code[1]
 
-    data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/'
-        + str(grading_period) + '/levels/' + str(grade_level) + '/')
-
-    try:
-        json_file = open(os.path.join(data_dir, class_code + '.json')).read()
-    except:
-        pass
-
     context = {
-        'json_data': json_file
+        'json_data': gradebook.get_json_from_class_code(grading_period,
+            grade_level, class_code)
     }
     return render(request, 'gradebook/detail.html', context)

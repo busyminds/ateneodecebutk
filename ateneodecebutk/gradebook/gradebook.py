@@ -69,6 +69,8 @@ SECTION_CODES = [
     ]
 ]
 
+GRADEBOOK_DATA_DIR_PREFIX = 'files/gradebook/assessments/Q'
+
 def time_difference(timestamp):
     difference = time.time() - timestamp
 
@@ -101,7 +103,7 @@ def get_subject_status(grading_period, grade_level):
         if grade_level < 3:
             subjects.remove(('SCI', 'Science'))
 
-    data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/'
+    data_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
         + str(grading_period) + '/levels/' + str(grade_level) + '/')
 
     for subject in subjects:
@@ -123,3 +125,15 @@ def get_subject_status(grading_period, grade_level):
         subject_data.append((subject[1], section_data))
 
     return subject_data
+
+def get_json_from_class_code(grading_period, grade_level, class_code):
+
+    data_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
+        + str(grading_period) + '/levels/' + str(grade_level) + '/')
+
+    try:
+        json_file = open(os.path.join(data_dir, class_code + '.json')).read()
+    except:
+        return None
+    else:
+        return json_file
