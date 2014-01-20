@@ -1,11 +1,14 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 import os
 
 from ateneodecebutk.settings.base import BASE_DIR
 
 import gradebook
 
-def index(request, grading_period):
+def index(request, grading_period = None):
+    if grading_period is None:
+        return redirect('/gradebook/4')
     class_table = []
 
     for i in range(6):
@@ -23,7 +26,6 @@ def index(request, grading_period):
 def detail(request, grading_period, class_code):
 
     grade_level = class_code[1]
-    # grading_period = 4
 
     data_dir = os.path.join(BASE_DIR, 'files/gradebook/assessments/'
         + str(grading_period) + '/levels/' + str(grade_level) + '/')
