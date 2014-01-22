@@ -9,8 +9,8 @@ urlpatterns = (
         url(r'^$', 'ateneodecebutk.views.index', name='index'),
         url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
         url(r'^admin/', include(admin.site.urls)),
-        url(r'^gradebook/', include('gradebook.urls')),
-        url(r'^downloads/', include('downloads.urls')),
+        url(r'^gradebook/', include('gradebook.urls', namespace='gradebook')),
+        url(r'^downloads/', include('downloads.urls', namespace='downloads')),
     )
     # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
