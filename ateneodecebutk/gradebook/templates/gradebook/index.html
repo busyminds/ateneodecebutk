@@ -12,7 +12,24 @@
       </a>
     </p>
 
-    </p>
+
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Upload your ECR</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/gradebook/4" method="post" enctype="multipart/form-data" role="form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="InputFile">{{ form.file.label }}</label>
+          {{ form.file }}
+          <!--<p class="help-block">Example block-level help text here.</p>-->
+        </div>
+        <input class="btn btn-default" type="submit" value="Submit">
+      </form>
+    </div>
   </div>
 
   {% for level in class_table %}

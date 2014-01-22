@@ -137,3 +137,10 @@ def get_json_from_class_code(grading_period, grade_level, class_code):
         return None
     else:
         return json_file
+
+def save_ecr_file(file_data, filename):
+
+    path = os.path.join(BASE_DIR, 'files/gradebook/uploads/')
+    with open(os.path.join(path, filename), 'wb+') as destination:
+        for chunk in file_data.chunks():
+            destination.write(chunk)
