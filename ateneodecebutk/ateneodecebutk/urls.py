@@ -12,6 +12,5 @@ urlpatterns = (
         url(r'^gradebook/', include('gradebook.urls', namespace='gradebook')),
         url(r'^downloads/', include('downloads.urls', namespace='downloads')),
     )
-    # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 )

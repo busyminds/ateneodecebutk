@@ -3,7 +3,6 @@ from django.shortcuts import redirect
 from django.http import Http404
 from django.contrib import messages
 
-# from django.http import HttpResponseRedirect
 from .forms import UploadFileForm
 
 from .gradebook import SECTION_CODES
@@ -58,3 +57,7 @@ def detail(request, grading_period, class_code):
     }
 
     return render(request, 'gradebook/detail.html', context)
+
+def subject(request, grading_period, grade_level, subject):
+
+    pass
