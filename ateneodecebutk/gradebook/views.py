@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import Http404
+from django.contrib import messages
 
 # from django.http import HttpResponseRedirect
 from .forms import UploadFileForm
@@ -15,6 +16,8 @@ def index(request, grading_period = None):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             save_ecr_file(request.FILES['file'], request.FILES['file'].name)
+            messages.success(request,
+                '<strong>Success!</strong> File successfully uploaded.')
             return redirect(request.path)
         else:
             raise Http404
