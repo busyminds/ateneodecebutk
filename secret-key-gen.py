@@ -15,7 +15,7 @@ import os
 try:
     SECRET_KEY
 except NameError:
-    SECRET_FILE = os.path.join('secret.txt')
+    SECRET_FILE = os.path.join('ateneodecebutk/ateneodecebutk/secret.txt')
     try:
         SECRET_KEY = open(SECRET_FILE).read().strip()
     except IOError:

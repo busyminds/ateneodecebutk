@@ -1,4 +1,4 @@
-from ateneodecebutk.settings.base import *
+from .base import *
 
 DEBUG = False
 
