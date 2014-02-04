@@ -1,0 +1,3 @@
+upgrade jquery
+upgrade angular
+deploy django
