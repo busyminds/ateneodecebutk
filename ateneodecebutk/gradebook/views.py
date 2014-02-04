@@ -5,16 +5,19 @@ from django.contrib import messages
 
 from .forms import UploadFileForm
 
-from .gradebook import SECTION_CODES
-from .gradebook import get_subject_status
-from .gradebook import get_json_from_class_code
-from .gradebook import save_ecr_file
+from .gradebook_reader import SECTION_CODES
+from .gradebook_reader import get_subject_status
+from .gradebook_reader import get_json_from_class_code
+from .gradebook_reader import save_ecr_file
+
+from .gradebook_writer import write_gradebook_data
 
 def index(request, grading_period = None):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            save_ecr_file(request.FILES['file'], request.FILES['file'].name)
+            filepath = save_ecr_file(request.FILES['file'], request.FILES['file'].name)
+            write_gradebook_data(grading_period, filepath)
             messages.success(request,
                 '<strong>Success!</strong> File successfully uploaded.')
             return redirect(request.path)

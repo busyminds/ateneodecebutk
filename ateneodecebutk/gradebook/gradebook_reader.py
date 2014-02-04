@@ -144,3 +144,5 @@ def save_ecr_file(file_data, filename):
     with open(os.path.join(path, filename), 'wb+') as destination:
         for chunk in file_data.chunks():
             destination.write(chunk)
+
+    return os.path.join(path, filename)
