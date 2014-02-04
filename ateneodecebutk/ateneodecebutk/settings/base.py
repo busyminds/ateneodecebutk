@@ -8,18 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from django.core.exceptions import ImproperlyConfigured
-
-msg = "Set the %s environment variable."
-
-def get_env_variable(var_name):
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = msg % var_name
-        raise ImproperlyConfigured(error_msg)
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -27,7 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_env_variable('SECRET_KEY')
+with open('secret.txt') as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -93,10 +84,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
-
 MEDIA_URL = '/files/'
