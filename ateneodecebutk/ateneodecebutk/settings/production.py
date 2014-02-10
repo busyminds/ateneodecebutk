@@ -8,9 +8,9 @@ ALLOWED_HOSTS = ['ateneodecebu.tk']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-ADMINS = ('noelmartin@gmail.com')
+ADMINS = ('noelmartin@gmail.com',)
 
-MANAGERS = ('noelmartin@gmail.com')
+MANAGERS = ('noelmartin@gmail.com',)
 
 DEFAULT_FROM_EMAIL = 'noelmartin@gmail.com'
 

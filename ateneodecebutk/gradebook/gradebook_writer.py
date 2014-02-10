@@ -86,7 +86,6 @@ def convert_excel_date(excel_date, workbook):
 def get_activity_data(section, column, workbook):
 
     """ Gets data from a specific column """
-    print section.name, column
     excel_date = section.cell_value(1, column)
 
     if excel_date != '':
