@@ -86,7 +86,6 @@ def convert_excel_date(excel_date, workbook):
 def get_activity_data(section, column, workbook):
 
     """ Gets data from a specific column """
-    print section.name, column
     excel_date = section.cell_value(1, column)
 
     if excel_date != '':
@@ -314,11 +313,11 @@ def write_gradebook_data(grading_period, filename):
             class_data["competency_codes"] = competency_codes
 
             # pretty print
-            assessment_json = json.dumps(class_data, sort_keys=True,
-                indent=2, separators=(',', ': '))
+            # assessment_json = json.dumps(class_data, sort_keys=True,
+                # indent=2, separators=(',', ': '))
 
             # compact print
-            # assessment_json = json.dumps(class_data, separators=(',', ':'))
+            assessment_json = json.dumps(class_data, separators=(',', ':'))
 
             levels_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
                 + str(grading_period) + '/levels/' + str(class_data["level"]) + '/')
