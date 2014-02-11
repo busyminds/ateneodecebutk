@@ -6,8 +6,8 @@ TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['ateneodecebu.tk']
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'files/')
 
 ADMINS = ('noelmartin@gmail.com',)
 
