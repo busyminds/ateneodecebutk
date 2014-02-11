@@ -2,7 +2,7 @@ from django.shortcuts import render
 # from django.http import HttpResponse
 import glob
 import os
-from ateneodecebutk.settings.base import MEDIA_ROOT
+from ateneodecebutk.settings.production import MEDIA_ROOT
 
 # Create your views here.
 def index(request):
