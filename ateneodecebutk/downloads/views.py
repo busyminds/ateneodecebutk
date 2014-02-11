@@ -8,6 +8,7 @@ from ateneodecebutk.settings.production import MEDIA_ROOT
 def index(request):
     ecr_files = [os.path.basename(f) for f in
         glob.glob(MEDIA_ROOT + '/downloads/gradebook/*')]
+    ecr_files.sort()
     context = {
         'ecr_files': ecr_files,
         'test': 'Hello'
