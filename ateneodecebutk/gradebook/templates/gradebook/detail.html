@@ -8,7 +8,7 @@
 
 {% block content %}
   {% verbatim %}
-  <div ng-app="EcrApp" ng-controller="EcrDataController" ng-cloak>
+  <div ng-app="GradebookApp" ng-controller="GradebookDataController" ng-cloak>
     <h1 class="text-muted">
       <span class="text-info">
         {{jsonData.level}}-{{jsonData.section}}
@@ -295,5 +295,5 @@
     var ecrData;
     ecrData = {{ json_data|safe }};
   </script>
-  <script src="{% static "ateneodecebutk/js/ecr.js" %}"></script>
+  <script src="{% static "gradebook/js/gradebook.js" %}"></script>
 {% endblock %}
