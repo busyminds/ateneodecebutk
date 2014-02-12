@@ -284,7 +284,7 @@ def get_section_data(sheet, workbook):
 def get_competency_codes(workbook):
     curriculum_sheet = workbook.sheet_by_name('Curriculum')
     competency_codes = []
-    for row in range(6, 26):
+    for row in range(3, 24):
         if curriculum_sheet.cell_value(row, 0) != "":
             code = curriculum_sheet.cell_value(row, 0).strip()
             competency = curriculum_sheet.cell_value(row, 1).strip()
