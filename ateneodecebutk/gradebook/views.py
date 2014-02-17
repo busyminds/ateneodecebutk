@@ -11,8 +11,9 @@ from .gradebook_reader import SECTION_CODES
 from .gradebook_reader import get_subject_status
 from .gradebook_reader import get_json_from_class_code
 from .gradebook_reader import save_ecr_file
-
 from .gradebook_writer import write_gradebook_data
+
+from .mail_sender import send_message
 
 def index(request, grading_period = None):
     if request.method == 'POST':
@@ -24,6 +25,7 @@ def index(request, grading_period = None):
                 write_gradebook_data(grading_period, filepath)
                 message = '<strong>Success!</strong> File uploaded.'
                 messages.success(request, message)
+                send_message(filepath)
             except:
                 os.remove(filepath)
                 err_msg = '<strong>Error!</strong> '
