@@ -25,7 +25,7 @@ def index(request, grading_period = None):
                 write_gradebook_data(grading_period, filepath)
                 message = '<strong>Success!</strong> File uploaded.'
                 messages.success(request, message)
-                send_message(filepath)
+                # send_message(filepath)
             except:
                 os.remove(filepath)
                 err_msg = '<strong>Error!</strong> '
