@@ -22,10 +22,10 @@ def index(request, grading_period = None):
             filepath = save_ecr_file(request.FILES['file'],
                 request.FILES['file'].name)
             try:
-                write_gradebook_data(grading_period, filepath)
+                class_data = write_gradebook_data(grading_period, filepath)
                 message = '<strong>Success!</strong> File uploaded.'
                 messages.success(request, message)
-                # send_message(filepath)
+                send_message(class_data)
             except:
                 os.remove(filepath)
                 err_msg = '<strong>Error!</strong> '

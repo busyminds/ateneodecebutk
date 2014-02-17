@@ -312,18 +312,15 @@ def write_gradebook_data(grading_period, filename):
             competency_codes = get_competency_codes(workbook)
             class_data["competency_codes"] = competency_codes
 
-            # pretty print
-            # assessment_json = json.dumps(class_data, sort_keys=True,
-                # indent=2, separators=(',', ': '))
-
-            # compact print
             assessment_json = json.dumps(class_data, separators=(',', ':'))
 
             levels_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
-                + str(grading_period) + '/levels/' + str(class_data["level"]) + '/')
+                + str(grading_period) + '/levels/'
+                + str(class_data["level"]) + '/')
 
             subjects_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
-                + str(grading_period) + '/subjects/' + SUBJECT_CODES[subject] + '/')
+                + str(grading_period) + '/subjects/'
+                + SUBJECT_CODES[subject] + '/')
 
             filepaths = (levels_dir, subjects_dir)
 
@@ -335,3 +332,9 @@ def write_gradebook_data(grading_period, filename):
                 assessment_file.write(assessment_json)
 
             assessment_file.close()
+
+            return {
+                'teacher': class_data['teacher'],
+                'level': class_data['level'],
+                'subject': class_data['subject'],
+            }
