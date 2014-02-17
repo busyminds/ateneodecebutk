@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import Http404
@@ -16,10 +18,20 @@ def index(request, grading_period = None):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            filepath = save_ecr_file(request.FILES['file'], request.FILES['file'].name)
-            write_gradebook_data(grading_period, filepath)
-            messages.success(request,
-                '<strong>Success!</strong> File successfully uploaded.')
+            filepath = save_ecr_file(request.FILES['file'],
+                request.FILES['file'].name)
+            try:
+                write_gradebook_data(grading_period, filepath)
+                message = '<strong>Success!</strong> File uploaded.'
+                messages.success(request, message)
+            except:
+                os.remove(filepath)
+                err_msg = '<strong>Error!</strong> '
+                err_msg += 'Please make sure you are uploading the correct '
+                err_msg += 'file.'
+                messages.add_message(request, messages.ERROR, err_msg,
+                    'danger')
+
             return redirect(request.path)
         else:
             raise Http404
