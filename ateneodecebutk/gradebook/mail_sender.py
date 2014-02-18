@@ -1,10 +1,27 @@
 import requests
 import string
+from django.http import HttpRequest
 
 def send_message(class_data):
     teacher = class_data['teacher']
     level = class_data['level']
     subject = class_data['subject']
+
+    if 'ateneodecebu.tk' in HttpRequest.META['SERVER_NAME']:
+        recipients = [
+            'noelmartin@gmail.com',
+            'dashmug@gmail.com'
+            # 'annieabucay13@yahoo.com',
+            # 'lepamores@yahoo.com',
+            # 'jonasemile@gmail.com'
+        ]
+    else:
+        recipients = [
+            'noelmartin@gmail.com'
+            # 'annieabucay13@yahoo.com',
+            # 'lepamores@yahoo.com',
+            # 'jonasemile@gmail.com'
+        ]
 
     html_body = '''
         <!doctype html>
@@ -49,12 +66,7 @@ def send_message(class_data):
     email_data = {
         'from': 'SHS-AdC Gradebook <gradebook@sandbox53636.mailgun.org>',
         'h:Reply-To': 'noelmartin@gmail.com',
-        'to': [
-            'noelmartin@gmail.com',
-            'annieabucay13@yahoo.com',
-            'lepamores@yahoo.com',
-            'jonasemile@gmail.com'
-        ],
+        'to': recipients,
         'subject': '[SHS-AdC Gradebook] ' + teacher + ' has updated the Gradebook.',
         'html': html_body}
 
