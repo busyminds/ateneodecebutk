@@ -27,8 +27,12 @@ def send_message(class_data):
         <html>
         <body>
         <p>
-            <strong>$teacher </strong>
-            has updated his Gradebook for <strong>$subject $level</strong>.
+            <em>Note: This is an automated message.</em>
+        </p>
+        <p>
+            <em class="text-success">$teacher </em>
+            has updated his/her Gradebook for
+            <em class="text-success">$subject $level</em>.
         </p>
         <p>
             You may see the updates at
@@ -45,7 +49,12 @@ def send_message(class_data):
     email_data = {
         'from': 'SHS-AdC Gradebook <gradebook@sandbox53636.mailgun.org>',
         'h:Reply-To': 'noelmartin@gmail.com',
-        'to': ['dashmug@gmail.com'],
+        'to': [
+            'noelmartin@gmail.com',
+            'annieabucay13@yahoo.com',
+            'lepamores@yahoo.com',
+            'jonasemile@gmail.com'
+        ],
         'subject': '[SHS-AdC Gradebook] ' + teacher + ' has updated the Gradebook.',
         'html': html_body}
 
