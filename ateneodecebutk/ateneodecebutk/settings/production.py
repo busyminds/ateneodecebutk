@@ -4,7 +4,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['ateneodecebu.tk']
+ALLOWED_HOSTS = ['ateneodecebu.tk','www.ateneodecebu.tk']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'files/')
@@ -23,5 +23,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER ='noelmartin@gmail.com'
-EMAIL_HOST_PASSWORD = 'SourceSplitThirdProperly()_'
+EMAIL_HOST_PASSWORD = 'SourceSplitThirdProperly()_	'
 EMAIL_USE_TLS = True
