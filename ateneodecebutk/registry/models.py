@@ -1,11 +1,14 @@
 from django.db import models
 
 class Teacher(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    middle_initial = models.CharField(max_length=5)
     salutation = models.CharField(max_length=5)
-    suffix = models.CharField(max_length=5)
+    first_name = models.CharField(max_length=30)
+    middle_initial = models.CharField(max_length=5, blank=True)
+    last_name = models.CharField(max_length=30)
+    suffix = models.CharField(max_length=5, blank=True)
+
+    def __unicode__(self):
+        return self.last_name + ', ' + self.first_name
 
 class Subject(models.Model):
 	code = models.CharField(max_length=3)
