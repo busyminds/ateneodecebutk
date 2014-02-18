@@ -1,26 +1,21 @@
 import requests
 import string
-from django.http import HttpRequest
 
-def send_message(class_data):
+def send_message(request, class_data):
     teacher = class_data['teacher']
     level = class_data['level']
     subject = class_data['subject']
 
-    if 'ateneodecebu.tk' in HttpRequest.META['SERVER_NAME']:
+    if 'ateneodecebu.tk' in request.get_host():
         recipients = [
             'noelmartin@gmail.com',
-            'dashmug@gmail.com'
-            # 'annieabucay13@yahoo.com',
-            # 'lepamores@yahoo.com',
-            # 'jonasemile@gmail.com'
+            'annieabucay13@yahoo.com',
+            'lepamores@yahoo.com',
+            'jonasemile@gmail.com'
         ]
     else:
         recipients = [
-            'noelmartin@gmail.com'
-            # 'annieabucay13@yahoo.com',
-            # 'lepamores@yahoo.com',
-            # 'jonasemile@gmail.com'
+            'dashmug@gmail.com'
         ]
 
     html_body = '''

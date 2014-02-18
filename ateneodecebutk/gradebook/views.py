@@ -21,18 +21,18 @@ def index(request, grading_period = None):
         if form.is_valid():
             filepath = save_ecr_file(request.FILES['file'],
                 request.FILES['file'].name)
-            try:
-                class_data = write_gradebook_data(grading_period, filepath)
-                message = '<strong>Success!</strong> File uploaded.'
-                messages.success(request, message)
-                send_message(class_data)
-            except:
-                os.remove(filepath)
-                err_msg = '<strong>Error!</strong> '
-                err_msg += 'Please make sure you are uploading the correct '
-                err_msg += 'file.'
-                messages.add_message(request, messages.ERROR, err_msg,
-                    'danger')
+            # try:
+            class_data = write_gradebook_data(grading_period, filepath)
+            send_message(request, class_data)
+            message = '<strong>Success!</strong> File uploaded.'
+            messages.success(request, message)
+            # except:
+                # os.remove(filepath)
+                # err_msg = '<strong>Error!</strong> '
+                # err_msg += 'Please make sure you are uploading the correct '
+                # err_msg += 'file.'
+                # messages.add_message(request, messages.ERROR, err_msg,
+                #     'danger')
 
             return redirect(request.path)
         else:
@@ -55,7 +55,8 @@ def index(request, grading_period = None):
         context = {
             'grading_period': grading_period,
             'class_table': class_table,
-            'form': form
+            'form': form,
+            'debug': request.get_host()
         }
 
         return render(request, 'gradebook/index.html', context)

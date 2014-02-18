@@ -333,8 +333,8 @@ def write_gradebook_data(grading_period, filename):
 
             assessment_file.close()
 
-            return {
-                'teacher': class_data['teacher'],
-                'level': class_data['level'],
-                'subject': class_data['subject'],
-            }
+    return {
+        'teacher': class_data['teacher'],
+        'level': class_data['level'],
+        'subject': class_data['subject'],
+    }
