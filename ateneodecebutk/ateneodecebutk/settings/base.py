@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'ateneodecebutk',
     'gradebook',
     'downloads',
+    'registry',
 )
 
 MIDDLEWARE_CLASSES = (
