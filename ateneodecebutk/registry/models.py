@@ -11,18 +11,27 @@ class Teacher(models.Model):
         return self.last_name + ', ' + self.first_name
 
 class Subject(models.Model):
-	code = models.CharField(max_length=3)
-	name = models.CharField(max_length=20)
+    code = models.CharField(max_length=3)
+    name = models.CharField(max_length=30)
+
+    def __unicode__(self):
+        return self.name
 
 class Section(models.Model):
-	code = models.CharField(max_length=3)
-	level = models.IntegerField()
-	name = models.CharField(max_length=20)
-	full_name = models.CharField(max_length=40)
+    code = models.CharField(max_length=3)
+    level = models.IntegerField()
+    name = models.CharField(max_length=20)
+    full_name = models.CharField(max_length=40)
+
+    def __unicode__(self):
+        return str(self.level) + '-' + self.name
 
 class Course(models.Model):
-	teacher = models.ManyToManyField(Teacher)
-	subject = models.ForeignKey(Subject)
-	section = models.ForeignKey(Section)
-	schedule = models.CharField(max_length=5)
+    teacher = models.ManyToManyField(Teacher)
+    subject = models.ForeignKey(Subject)
+    section = models.ForeignKey(Section)
+    schedule = models.CharField(max_length=5)
+
+    def __unicode__(self):
+        return str(self.section) + ' | ' + str(self.subject)
 
