@@ -7,8 +7,8 @@ admin.autodiscover()
 urlpatterns = (
     patterns('',
         url(r'^$', 'ateneodecebutk.views.index', name='index'),
-        url(r'^ict-devops/doc/', include('django.contrib.admindocs.urls')),
-        url(r'^ict-devops/', include(admin.site.urls)),
+        url(r'^ict/doc/', include('django.contrib.admindocs.urls')),
+        url(r'^ict/', include(admin.site.urls)),
         url(r'^gradebook/', include('gradebook.urls', namespace='gradebook')),
         url(r'^downloads/', include('downloads.urls', namespace='downloads')),
     )
