@@ -4,13 +4,16 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = (
-    patterns('',
-        url(r'^$', 'ateneodecebutk.views.index', name='index'),
-        url(r'^ict/doc/', include('django.contrib.admindocs.urls')),
-        url(r'^ict/', include(admin.site.urls)),
-        url(r'^gradebook/', include('gradebook.urls', namespace='gradebook')),
-        url(r'^downloads/', include('downloads.urls', namespace='downloads')),
-    )
-    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = patterns('',
+    url(r'^$', 'ateneodecebutk.views.index', name='index'),
+    url(r'^ict/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^ict/', include(admin.site.urls)),
+    url(r'^gradebook/', include('gradebook.urls', namespace='gradebook')),
+    url(r'^downloads/', include('downloads.urls', namespace='downloads')),
 )
+
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
