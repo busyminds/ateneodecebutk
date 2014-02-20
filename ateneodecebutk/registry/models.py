@@ -40,7 +40,7 @@ class Course(models.Model):
     section = models.ForeignKey(Section)
     subject = models.ForeignKey(Subject)
     teacher = models.ForeignKey(Teacher, null=True)
-    schedule = models.CharField(max_length=5)
+    schedule = models.CharField(max_length=5, blank=True)
 
     def __unicode__(self):
         return str(self.section) + ' | ' + str(self.subject)

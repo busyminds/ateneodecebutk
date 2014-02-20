@@ -1,6 +1,5 @@
 from __future__ import with_statement
 from fabric.api import *
-# from fabric.contrib.console import confirm
 
 env.hosts = ['128.199.237.125']
 
