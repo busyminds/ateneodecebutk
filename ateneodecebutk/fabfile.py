@@ -3,13 +3,22 @@ from fabric.api import *
 
 env.hosts = ['128.199.237.125']
 
-def prepare_deploy():
+def push():
     local("git add . -A && git commit")
     local("git push")
 
-def deploy():
-    prepare_deploy()
+def pull():
     code_dir = '/home/noel/ateneodecebutk'
     with cd(code_dir):
         run("git pull")
-        run("sudo service uwsgi restart")
+
+def restart_nginx():
+    run("sudo service nginx restart")
+
+def restart_uwsgi():
+    run("sudo service uwsgi restart")
+
+def deploy():
+	push()
+	pull()
+	restart_uwsgi()
