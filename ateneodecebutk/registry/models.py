@@ -36,10 +36,24 @@ class Section(models.Model):
     class Meta:
         ordering = ['code']
 
+class SchoolYear(models.Model):
+    name = models.CharField(max_length=20)
+    teachers = models.ManyToManyField(Teacher)
+
+class Semester(models.Model):
+    name = models.CharField(max_length=20)
+    school_year = models.ForeignKey(SchoolYear)
+
+class Quarter(models.Model):
+    name = models.CharField(max_length=20)
+    semester = models.ForeignKey(Semester)
+    start_date = models.DateField()
+    end_date = models.DateField()
+
 class Course(models.Model):
     section = models.ForeignKey(Section)
     subject = models.ForeignKey(Subject)
-    teacher = models.ForeignKey(Teacher, null=True)
+    teacher = models.ForeignKey(Teacher)
     schedule = models.CharField(max_length=5, blank=True)
 
     def __unicode__(self):

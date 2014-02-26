@@ -5,8 +5,8 @@ from .models import Subject
 from .models import Course
 
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('section', 'subject', 'teacher')
-    list_filter = ['section__level', 'subject', 'teacher']
+    list_display = ('section', 'subject', 'teacher', 'schedule')
+    list_filter = ['section__level', 'subject', 'section', 'teacher']
 
 admin.site.register(Teacher)
 admin.site.register(Section)
