@@ -40,15 +40,24 @@ class SchoolYear(models.Model):
     name = models.CharField(max_length=20)
     teachers = models.ManyToManyField(Teacher)
 
+    def __unicode__(self):
+        return self.name
+
 class Semester(models.Model):
     name = models.CharField(max_length=20)
     school_year = models.ForeignKey(SchoolYear)
+
+    def __unicode__(self):
+        return self.school_year + '(' + self.name + ')'
 
 class Quarter(models.Model):
     name = models.CharField(max_length=20)
     semester = models.ForeignKey(Semester)
     start_date = models.DateField()
     end_date = models.DateField()
+
+    def __unicode__(self):
+        return self.school_year + '(' + self.name + ')'
 
 class Course(models.Model):
     section = models.ForeignKey(Section)
