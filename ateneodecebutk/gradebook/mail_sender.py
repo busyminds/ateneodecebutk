@@ -1,6 +1,7 @@
 import requests
 import string
 
+
 def send_message(request, class_data):
     teacher = class_data['teacher']
     level = class_data['level']
@@ -28,7 +29,9 @@ def send_message(request, class_data):
         </p>
         <p>
             You may see the updates at
-             <a href="http://ateneodecebu.tk/gradebook">http://ateneodecebu.tk/gradebook</a>.
+             <a href="http://ateneodecebu.tk/gradebook">
+                http://ateneodecebu.tk/gradebook
+             </a>.
         </p>
         </body>
         </html>
@@ -48,13 +51,14 @@ def send_message(request, class_data):
         </p>
         <p>
             You may see the updates at
-             <a href="http://ateneodecebu.tk/gradebook">http://ateneodecebu.tk/gradebook</a>.
+             <a href="http://ateneodecebu.tk/gradebook">
+                http://ateneodecebu.tk/gradebook
+             </a>.
         </p>
         </body>
         </html>
     ''')
     html_body = tmpl.substitute(teacher=teacher, level=level, subject=subject)
-
 
     endpoint = 'https://api.mailgun.net/v2/sandbox53636.mailgun.org/messages'
     credentials = ('api', 'key-0o543t46p791fhsd2ou3cu4m7vjphj40')
@@ -62,7 +66,8 @@ def send_message(request, class_data):
         'from': 'SHS-AdC Gradebook <gradebook@sandbox53636.mailgun.org>',
         'h:Reply-To': 'noelmartin@gmail.com',
         'to': recipients,
-        'subject': '[SHS-AdC Gradebook] ' + teacher + ' has updated the Gradebook.',
+        'subject': '[SHS-AdC Gradebook] ' + teacher
+                   + ' has updated the Gradebook.',
         'html': html_body}
 
     return requests.post(endpoint, auth=credentials, data=email_data)

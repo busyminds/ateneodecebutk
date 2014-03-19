@@ -71,6 +71,7 @@ SECTION_CODES = [
 
 GRADEBOOK_DATA_DIR_PREFIX = 'files/gradebook/assessments/Q'
 
+
 def time_difference(timestamp):
     difference = time.time() - timestamp
 
@@ -83,7 +84,7 @@ def time_difference(timestamp):
                     (60 * 60, 'hour'),
                     (60, 'minute'),
                     (1, 'second'),
-    ]
+                    ]
 
     for seconds, time_string in time_factors:
         d = difference/seconds
@@ -95,6 +96,7 @@ def time_difference(timestamp):
                 plural = ' ago'
             return '%d %s%s' % (r, time_string, plural)
 
+
 def get_subject_status(grading_period, grade_level):
     subject_data = []
     subjects = list(SUBJECT_CODES)
@@ -104,7 +106,8 @@ def get_subject_status(grading_period, grade_level):
             subjects.remove(('SCI', 'Science'))
 
     data_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
-        + str(grading_period) + '/levels/' + str(grade_level) + '/')
+                            + str(grading_period) + '/levels/'
+                            + str(grade_level) + '/')
 
     for subject in subjects:
         section_data = []
@@ -126,10 +129,12 @@ def get_subject_status(grading_period, grade_level):
 
     return subject_data
 
+
 def get_json_from_class_code(grading_period, grade_level, class_code):
 
     data_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
-        + str(grading_period) + '/levels/' + str(grade_level) + '/')
+                            + str(grading_period) + '/levels/'
+                            + str(grade_level) + '/')
 
     try:
         json_file = open(os.path.join(data_dir, class_code + '.json')).read()
@@ -138,11 +143,12 @@ def get_json_from_class_code(grading_period, grade_level, class_code):
     else:
         return json_file
 
-def save_ecr_file(file_data, filename):
+
+def save_ecr_file(file_data):
 
     path = os.path.join(BASE_DIR, 'files/gradebook/uploads/')
-    with open(os.path.join(path, filename), 'wb+') as destination:
+    with open(os.path.join(path, file_data.name), 'wb+') as destination:
         for chunk in file_data.chunks():
             destination.write(chunk)
 
-    return os.path.join(path, filename)
+    return os.path.join(path, file_data.name)

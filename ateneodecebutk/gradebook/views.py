@@ -13,12 +13,12 @@ from .gradebook_writer import write_gradebook_data
 
 from .mail_sender import send_message
 
-def index(request, grading_period = None):
+
+def index(request, grading_period=None):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            filepath = save_ecr_file(request.FILES['file'],
-                request.FILES['file'].name)
+            filepath = save_ecr_file(request.FILES['file'])
             # try:
             class_data = write_gradebook_data(grading_period, filepath)
             send_message(request, class_data)
@@ -59,6 +59,7 @@ def index(request, grading_period = None):
 
         return render(request, 'gradebook/index.html', context)
 
+
 def detail(request, grading_period, class_code):
 
     level = class_code[1]
@@ -73,6 +74,7 @@ def detail(request, grading_period, class_code):
     }
 
     return render(request, 'gradebook/detail.html', context)
+
 
 def subject(request, grading_period, grade_level, subject):
 

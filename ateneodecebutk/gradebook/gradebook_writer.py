@@ -28,7 +28,7 @@ SECTION_CODES = {
     "1-Sales": "G1A",
     "1-Azevedo": "G1B",
     "1-Imbert": "G1C",
-    "1-Andrade": "G1D" ,
+    "1-Andrade": "G1D",
     "1-Mayer": "G1E",
     "1-Hoyos": "G1F",
     "1-Pro": "G1G",
@@ -74,6 +74,7 @@ NON_GRADESHEETS = (
 COMPONENT_COLUMNS = [5, 28, 51, 74]
 
 GRADEBOOK_DATA_DIR_PREFIX = 'files/gradebook/assessments/Q'
+
 
 def convert_excel_date(excel_date, workbook):
 
@@ -207,7 +208,7 @@ def get_periodical_test_data(sheet, workbook):
 
         passing_rate = round(sheet.cell_value(71, 99), 4)
 
-        periodical_test_data  = {
+        periodical_test_data = {
             "points": points,
             "pt_average": pt_average,
             "pt_histogram": pt_histogram,
@@ -264,8 +265,8 @@ def get_section_data(sheet, workbook):
     teacher = management_sheet.cell_value(4, 5).strip()
     subject = management_sheet.cell_value(4, 2).strip()
 
-    level =  int(sheet.name.split("-")[0].strip())
-    section_name =  sheet.name.split("-")[1].strip()
+    level = int(sheet.name.split("-")[0].strip())
+    section_name = sheet.name.split("-")[1].strip()
 
     section_data = {
         "section": section_name,
@@ -315,17 +316,17 @@ def write_gradebook_data(grading_period, filename):
             assessment_json = json.dumps(class_data, separators=(',', ':'))
 
             levels_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
-                + str(grading_period) + '/levels/'
-                + str(class_data["level"]) + '/')
+                                      + str(grading_period) + '/levels/'
+                                      + str(class_data["level"]) + '/')
 
             subjects_dir = os.path.join(BASE_DIR, GRADEBOOK_DATA_DIR_PREFIX
-                + str(grading_period) + '/subjects/'
-                + SUBJECT_CODES[subject] + '/')
+                                        + str(grading_period) + '/subjects/'
+                                        + SUBJECT_CODES[subject] + '/')
 
             filepaths = (levels_dir, subjects_dir)
 
             filename = (SECTION_CODES[sheet.name] + "-"
-                            + SUBJECT_CODES[subject] + ".json")
+                        + SUBJECT_CODES[subject] + ".json")
 
             for path in filepaths:
                 assessment_file = open(path + filename, "w")
