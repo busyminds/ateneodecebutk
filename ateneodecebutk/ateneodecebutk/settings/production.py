@@ -1,10 +1,10 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['ateneodecebu.tk', 'www.ateneodecebu.tk']
+ALLOWED_HOSTS = ['ateneo.dashmug.org']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
 
