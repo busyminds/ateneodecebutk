@@ -4,7 +4,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['ateneo.dashmug.org']
+ALLOWED_HOSTS = ['ateneodecebu.dashmug.org']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
 

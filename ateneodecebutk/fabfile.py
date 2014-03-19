@@ -19,6 +19,5 @@ def restart_uwsgi():
     run("sudo service uwsgi restart")
 
 def deploy():
-	push()
 	pull()
 	restart_uwsgi()
